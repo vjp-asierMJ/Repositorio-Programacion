@@ -39,6 +39,7 @@ public class Ejercicio26Tema2 {
        unidad = resto%10;
        
        
+       //Mostramos el mensaje por pantall
         System.out.println("La primera cifra es :"+milesima);
          System.out.println("La segunda cifra es :"+centena);
           System.out.println("La tercera cifra es :"+decena);

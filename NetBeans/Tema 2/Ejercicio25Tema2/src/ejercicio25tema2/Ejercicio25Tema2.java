@@ -16,15 +16,16 @@ public class Ejercicio25Tema2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int num1,num2,num3;
+        
+        int num1,num2,num3; //Declaro los valores
         
         int suma,producto;
         
         Scanner entrada = new Scanner(System.in);
         
-        System.out.println("Introduce el primer numero");
+        System.out.println("Introduce el primer numero"); //Pido los numeros
         
-        num1=entrada.nextInt();
+        num1=entrada.nextInt(); // Tomo el numero
         
         System.out.println("Introduce el segundo numero");
         
@@ -34,9 +35,9 @@ public class Ejercicio25Tema2 {
         
         num3=entrada.nextInt();
         
-        suma = num1+num2+num3;
+        suma = num1+num2+num3; //Inicializo la operacion
         
-        producto= num1*num2*num3;
+        producto= num1*num2*num3;//Inicializo la operacion
         
         System.out.println("La suma es : "+suma);
         System.out.println("La multiplicacion es : "+producto);

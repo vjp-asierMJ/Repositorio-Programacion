@@ -16,13 +16,13 @@ public class Ejercicio32Tema2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int valor;
+        
+        int valor; 
         int billetes50,billetes20,billetes10,billetes5;
-        
         int moneda2,moneda1;
+        int resto; //Declaro las variables
         
-        int resto;
-        Scanner entrada = new Scanner (System.in);
+        Scanner entrada = new Scanner (System.in); //Declaro el scanner
         
         System.out.println("Por favor, indique una cantidad de dinero : ");
         
