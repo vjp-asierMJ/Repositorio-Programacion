@@ -26,24 +26,58 @@ public class Ejercicio8Tema3 {
         
         dinero = entrada.nextInt();
         
-        billetes50=dinero%50;
-        resto=billetes50%20;
+        billetes50=dinero/50; //Tomamos el resto y lo actualizamos
+        resto=dinero%50;
                 
         billetes20=resto/20;
-        resto=resto%10;
+        resto=resto%20;
         
         billetes10=resto/10;
-        resto=resto%5;
+        resto=resto%10;
         
         billetes5=resto/5;
-        resto=resto%2;
+        resto=resto%5;
         
         monedas2=resto/2;
         
-        monedas1= monedas2%2;
+       resto=resto%2;
+        
+       monedas1= resto;
+       
+       //Descomponemos
+       
+        System.out.println(dinero+" Se decompone en: ");
+        
+        //Hacemos el control de flujo
         
         
-        System.out.println(dinero+" Euros se descomponen en:");
+        if(billetes50>0){ //Si el valor es mayor que 0 imprimimos sino,no
+        
+           System.out.println(" Billetes de 50 : "+billetes50);
+           }
+           
+         if(billetes20>0){
+           System.out.println(" Billetes de 20 : "+billetes20);
+           }
+           
+         if(billetes10>0){
+           System.out.println(" Billetes de 10 : "+billetes10);
+           }
+           
+          if(billetes5>0){
+           System.out.println(" Billetes de 5 : "+billetes5);
+           }
+          
+          if(monedas2>0){
+           System.out.println(" Monedas de 2 : "+monedas2);
+           }
+         if(monedas1>0){
+           System.out.println(" Monedas de 1 : "+monedas1);
+           }
+           
+           
+     
+                   
     }
     
 }
