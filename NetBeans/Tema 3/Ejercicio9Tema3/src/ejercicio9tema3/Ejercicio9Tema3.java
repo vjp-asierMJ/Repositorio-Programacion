@@ -78,7 +78,7 @@ public class Ejercicio9Tema3 {
       cuarto=d;
       }
       
-      //ESTA PARTE NO HE SIDO CAPAZ DE HACERLA SOLO Y HE BUSCADO AYUDA CON IA
+      //ESTA PARTE NO HE SIDO CAPAZ DE HACERLA SOLO
       
       
       // Paso 3: encontrar los dos del medio
