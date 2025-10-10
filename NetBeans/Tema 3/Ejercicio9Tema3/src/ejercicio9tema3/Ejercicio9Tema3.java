@@ -28,7 +28,7 @@ public class Ejercicio9Tema3 {
         Scanner entrada = new Scanner (System.in);
        
         
-        System.out.println("Por favor, introduzca el primer numero");
+        System.out.println("Por favor, introduzca el primer numero"); //Inicializo las variables
         
          a = entrada.nextInt();
          

@@ -16,7 +16,7 @@ public class Ejercicio6Tema3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        byte nota;
+        byte nota; //Declaro la variable
         
         Scanner entrada = new Scanner(System.in); //Inicializamos las variables
         
