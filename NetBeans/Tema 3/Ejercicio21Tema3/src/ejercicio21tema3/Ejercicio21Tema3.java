@@ -31,9 +31,9 @@ public class Ejercicio21Tema3 {
         num2=entrada.nextInt();
         
          try {
-         resultado = num1/num2;
+         resultado = num1/num2; //Guardo la posible excepcion
          }
-         catch(ArithmeticException e){
+         catch(ArithmeticException e){ //Si ocurre error y el resultado es 0
              System.out.println("Error ");
              resultado=0;
          }

@@ -23,27 +23,26 @@ public class Ejercicio27Tema3 {
         int resultado;
         
         Scanner entrada = new Scanner (System.in);
-        
-        System.out.println("Introduce el primer numero"); //Asigno cada variable a el valor
-        
-        num1 = entrada.nextInt();
-        
-        System.out.println("Introduce el segundo numero");//Asigno cada variable a el valor
-        
-        num2 = entrada.nextInt();
-        
-        System.out.println("1.- Sumar los numeros"); //Hago el menu de opciones
-        
-        System.out.println("2.- Restar los numeros");
-        System.out.println("3.- Multiplicar los numeros");
-        System.out.println("4.- Dividir los numeros");
-        System.out.println("5.- Salir del programa");
-        
-        operacion = entrada.nextInt();
-        
+           
        try { //Hago el control de errores y dentro pongo el switch case
-           switch (operacion){
-            case 1: { //En caso de 1 suma y muestra el resultado
+            System.out.println("Introduce el primer numero"); //Asigno cada variable a el valor
+        
+            num1 = entrada.nextInt();
+        
+            System.out.println("Introduce el segundo numero");//Asigno cada variable a el valor
+        
+            num2 = entrada.nextInt();
+        do {
+            System.out.println("1.- Sumar los numeros"); //Hago el menu de opciones
+            System.out.println("2.- Restar los numeros");
+            System.out.println("3.- Multiplicar los numeros");
+            System.out.println("4.- Dividir los numeros");
+            System.out.println("5.- Salir del programa");
+        
+            operacion = entrada.nextInt();
+           
+             switch (operacion){
+                   case 1: { //En caso de 1 suma y muestra el resultado
                 resultado = num1+num2;
                 System.out.println(num1+"+"+num2+"="+resultado);
             break;
@@ -64,13 +63,16 @@ public class Ejercicio27Tema3 {
             break;
             }
             case 5 : {//En caso de 5 sale del programa
-            System.out.println("Salir del programa");
+                System.out.println("Salir del programa");
+            break;
             }
             default: {
                 System.out.println("Introduce un numero del 1 al 5");//Pongo una opcion por defecto para que escriba un numero del 1 al 5
             }
            }
        }
+        while (operacion!=5);
+        }
             catch(ArithmeticException e){ //Para que no pueda divir entre 0
                     System.out.println(e);
                     }
