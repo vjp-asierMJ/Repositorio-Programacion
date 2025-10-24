@@ -8,7 +8,8 @@ package introduccion;
  *
  * @author alumno
  */
-import Tema4.utilidades.Utilidades;
+
+import utilidades.Utilidades;
 
 public class Introduccion {
 
@@ -39,9 +40,9 @@ public class Introduccion {
         // TODO code application logic here
         
        //llamamos al metodo
-       int num1 = 6;
-       int num2 = 2;
-       int resultado;
+       int num1;
+       int num2;
+       double resultado;
        
        //Llamamos a todos los metodos que se ejecuten al lanzar
        
@@ -56,13 +57,36 @@ public class Introduccion {
 
     //Llamo a un metodo estatico de otra clase
     
-      resultado =  Calculadora.suma(num1, num2);
-        System.out.println(resultado);
-      resultado = Calculadora.resta(num1, num2);
-        System.out.println(resultado);
+//      resultado =  Calculadora.suma(num1, num2);
+//        System.out.println(resultado);
+//      resultado = Calculadora.resta(num1, num2);
+//        System.out.println(resultado);
         
     //Loamar un metodo estatico de una clase de otro paquete
-        Utilidades.pedirNumero();
+    
+    //Pedimos los numeros8
+    num1 = Utilidades.pedirNumero();
+    num2 = Utilidades.pedirNumero();
+    
+        //System.out.println(num1+num2);
+        //Suma
+        resultado= Calculadora.suma(num1, num2);
+        System.out.println("La suma es : "+resultado);
+        //Resta
+        resultado= Calculadora.resta(num1, num2);
+        System.out.println("La resta es : "+resultado);
+        //Multiplicacion 
+        resultado= Calculadora.multiplicacion(num1, num2);
+        System.out.println("La multiplicacion es : "+resultado);
+        //Division
+        resultado= Calculadora.division(num1, num2);
+        System.out.println("La division es : "+resultado);
+        //Raiz
+        resultado= Calculadora.raizCuadrada(num1);
+        System.out.println("La raiz cuadrada es : "+resultado);
     }
+    
+    
+    
     
 }

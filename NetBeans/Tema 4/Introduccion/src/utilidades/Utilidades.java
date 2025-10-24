@@ -11,8 +11,11 @@ package utilidades;
 import java.util.Scanner;
 public class Utilidades {
     public static int pedirNumero (){
+         
     Scanner entrada = new Scanner(System.in);
         System.out.println("escribe un numero");
-        return entrada.nextInt();
+        int num;
+        num = entrada.nextInt();
+        return num;
     }
 }
