@@ -21,12 +21,14 @@ public class Ejercicio9Tema3 {
         
         int a,b,c,d;
         
-        int primero,segundo,tercero,cuarto;
+        int primero,cuarto;
+        
+        // int segundo,tercero
         
         Scanner entrada = new Scanner (System.in);
        
         
-        System.out.println("Por favor, introduzca el primer numero");
+        System.out.println("Por favor, introduzca el primer numero"); //Inicializo las variables
         
          a = entrada.nextInt();
          
@@ -47,17 +49,21 @@ public class Ejercicio9Tema3 {
       if (a>b&&a>c&&a>d){
       
       primero=a;
+          System.out.println(primero);
       }
       else if (b>a&&b>c&&b>d) {
       primero=b;
+        System.out.println(primero);
       }
       
        else if (c>a&&c>b&&c>d) {
       primero=c;
+        System.out.println(primero);
       }
        
       else if (d>a&&d>b&&d>c) {
       primero=d;
+        System.out.println(primero);
       }
       
       //Ahora para encontrar el menor
@@ -65,18 +71,26 @@ public class Ejercicio9Tema3 {
       if (a<b&&a<c&&a<d){
       
      cuarto=a;
+          System.out.println(cuarto);
       }
       else if (b<a&&b<c&&b<d) {
       cuarto=b;
+         System.out.println(cuarto);
       }
       
        else if (c<a&&c<b&&c<d) {
       cuarto=c;
+         System.out.println(cuarto);
       }
        
       else if (d<a&&d<b&&d<c) {
       cuarto=d;
+         System.out.println(cuarto);
       }
+      
+      
+    }
+        
       
       //ESTA PARTE NO HE SIDO CAPAZ DE HACERLA SOLO
       
@@ -136,4 +150,4 @@ public class Ejercicio9Tema3 {
 
     }
     
-}
+
