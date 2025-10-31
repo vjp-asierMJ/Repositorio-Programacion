@@ -4,28 +4,35 @@
  */
 package ejercicio2tema4;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Asier
- */
-import java.util.Scanner; //Importo el scanenr
+ *///Importo el scanenr
 
 public class mayorMenor {
     
-    public static void mayorMenor(int num1, int num2) { 
+    public static void mayorMenor(int num1, int num2, int resultado) { 
    
-    Scanner entrada = new Scanner (System.in);
-    System.out.println("Por favor, introduzca el primer numero: ");
-        num1=entrada.nextInt();
-    System.out.println("Ahora, introduzca un segundo numero: ");
-        num2= entrada.nextInt();
+
+      Scanner entrada = new Scanner (System.in);
+     
+        System.out.println("Introduce el primer numero"); //Pido el primer numero
+        num1= entrada.nextInt();
+        System.out.println("El segundo numero");
+        num2=entrada.nextInt(); //Pido el segundo
        
-   if (num1>num2) {
-   multiplicacion(num1,num2); //Si es mayor llamo al metodo multiplicacion
-   }
-   else {
-   suma(num1,num2); // Sino, al suma
-   }
+        if (num1>num2){ //Si num1 es mayor multiplica
+        mayorMenor.multiplicacion(num1, num2);
+        resultado = num1*num2;
+            System.out.println("La multiplicacion de"+num1+"*"+num2+"="+resultado);
+        }
+        else {
+        mayorMenor.suma(num1, num2); //Si es menor suma
+        resultado=num1+num2;
+            System.out.println("La suma de "+num1+"+"+num2+"="+resultado);
+        }
    }
    /**
     * 
@@ -43,7 +50,7 @@ public class mayorMenor {
      * 
      * @param num1
      * @param num2
-     * @return devuelve la division 
+     * @return devuelve la suma 
      */
     public static int suma(int num1, int num2){ //Clase para la suma
     int resultado;
