@@ -84,6 +84,15 @@ public class Introduccion {
         //Raiz
         resultado= Calculadora.raizCuadrada(num1);
         System.out.println("La raiz cuadrada es : "+resultado);
+        //Ramdom
+        resultado = Calculadora.aleatorio(num1);
+        System.out.println("Un numero aleatorio del 1 al 1o es : "+resultado);
+        //Menor de los dos
+        resultado = Calculadora.menor(num1, num2);
+        System.out.println("El numero menor es : "+resultado);
+        //Mayor de los dos
+        resultado = Calculadora.mayor(num1, num2);
+        System.out.println("El numero mayor es :"+resultado);
     }
     
     

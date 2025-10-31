@@ -51,7 +51,36 @@ public class Calculadora {
      
      public static double raizCuadrada(int num1){
        return Math.sqrt(num1);
+      
      }
+     /**
+      * 
+      * @param num1
+      * @return un numero aleatorio entre 1 y 10
+      */
+     public static int aleatorio(int num1){
+         int resultado;
+         resultado = (int)(Math.random()*10+1);
+         return resultado;   
+     }
+     /**
+      * 
+      * @param num1
+      * @param num2
+      * @return Devuelve el menor de dos numeros introducidos 
+      */
+     public static int menor(int num1,int num2){
+     int resultado;
+     resultado =  Math.min(num1, num2);
+     return resultado;
+     }
+     public static int mayor(int num1,int num2){
+     int resultado;
+     resultado = Math.max(num1, num2);
+     return resultado;
+     }
+     
+     
     }
 
     
