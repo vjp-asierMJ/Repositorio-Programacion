@@ -18,4 +18,8 @@ public class Utilidades {
         num = entrada.nextInt();
         return num;
     }
+    public static char letraAleatoria(){
+        int codigoAscii = (int)(Math.random()*25+1 +(int)'a');
+        return (char) codigoAscii;        
+    }
 }

@@ -43,6 +43,7 @@ public class Introduccion {
        int num1;
        int num2;
        double resultado;
+       char letra;
        
        //Llamamos a todos los metodos que se ejecuten al lanzar
        
@@ -93,6 +94,9 @@ public class Introduccion {
         //Mayor de los dos
         resultado = Calculadora.mayor(num1, num2);
         System.out.println("El numero mayor es :"+resultado);
+    
+        letra = Utilidades.letraAleatoria();
+        System.out.println("La letra aleatoria es: "+letra);
     }
     
     
