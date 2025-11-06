@@ -16,41 +16,26 @@ public class orden {
         int segundo = num2;
         int tercero = num3;
         int cuarto = num4;
-
-        // Primera pasada
-        if (primero > segundo) {
+        int i;
+        
+        
+        for(i=1;i<=3;i++){ //Bucle para hacer el filtro del primero
+            //Realizamos el bucle un total de 3 veces que son las necesarias para saber todas las posiciones
+         if (primero > segundo) { //Si el primero > segundo, intercambiamos posiciones
             int aux = primero;
             primero = segundo;
             segundo = aux;
         }
-        if (segundo > tercero) {
+        if (segundo > tercero) { //Si el segundo > tercero, intercambiamos posiciones
             int aux = segundo;
             segundo = tercero;
             tercero = aux;
         }
-        if (tercero > cuarto) {
+        if (tercero > cuarto) { //Si el tercero > cuarto, intercambiamos posiciones
             int aux = tercero;
             tercero = cuarto;
             cuarto = aux;
         }
-
-        // Segunda pasada
-        if (primero > segundo) {
-            int aux = primero;
-            primero = segundo;
-            segundo = aux;
-        }
-        if (segundo > tercero) {
-            int aux = segundo;
-            segundo = tercero;
-            tercero = aux;
-        }
-
-        // Tercera pasada
-        if (primero > segundo) {
-            int aux = primero;
-            primero = segundo;
-            segundo = aux;
         }
 
         // Mostrar resultado
