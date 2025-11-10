@@ -49,15 +49,27 @@ public class Introduccion {
         System.out.println(bicicleta.getNumBicicletas());
         
         //PASO DE PARAMETROS POR VALOR O POR REFERENCIA
+        
+        Bicicleta bici = new Bicicleta();
+        
+        empezarAPedalear(bici);
+
         int num1 = 4;
         int resultado;
         resultado = suma(num1);
         
         System.out.println(resultado);
+        
+      
     }
     public static int suma(int num1){
         int num2= 3;
         return num1+num2;
+    }
+   
+    
+    public static void empezarAPedalear(Bicicleta bici) {
+        bici.setEstaPedaleando(true);
     }
     
     
