@@ -12,6 +12,8 @@ public class Coche {
     
     //1. ATRIBUTOS: caracteristicas. Nunca se inicializan aquí
     
+    //MODIFICADORES DE ACCESO
+   
     private String ruedas;
     private String suspension;
     private int espejos;

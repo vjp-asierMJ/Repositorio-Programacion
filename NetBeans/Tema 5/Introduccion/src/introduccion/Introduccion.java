@@ -28,12 +28,36 @@ public class Introduccion {
                 
         //1.2. Con constructor parametrizado, inicializando los atributos
         //con valores por parametro
-        Coche tuCoche = new Coche("Michelin" , "Bajo" , 3);
-        System.out.println(tuCoche.toString());
-         //Esto hace lo mismo que la linea anterior, porque detecta el toString() automaticamente 
-        System.out.println(tuCoche);
-            
-        System.out.println(tuCoche.getRuedas());   
+//        Coche tuCoche = new Coche("Michelin" , "Bajo" , 3);
+//        System.out.println(tuCoche.toString());
+//         //Esto hace lo mismo que la linea anterior, porque detecta el toString() automaticamente 
+//        System.out.println(tuCoche);
+//            
+//        System.out.println(tuCoche.getRuedas()); 
+
+
+        //MODIFICACIONES DE ACCESO
+        Bicicleta bicicleta = new Bicicleta();
+       //System.out.println(bicicleta.ruedas);
+        System.out.println("¿Estoy pedaleando ?"+bicicleta.getEstaPedaleando());
+    
+        
+       
+    
+        Bicicleta bicicleta2 = new Bicicleta();
+        System.out.println("¿Cuantas bicis hemos creado?");
+        System.out.println(bicicleta.getNumBicicletas());
+        
+        //PASO DE PARAMETROS POR VALOR O POR REFERENCIA
+        int num1 = 4;
+        int resultado;
+        resultado = suma(num1);
+        
+        System.out.println(resultado);
+    }
+    public static int suma(int num1){
+        int num2= 3;
+        return num1+num2;
     }
     
     
