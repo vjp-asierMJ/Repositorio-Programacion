@@ -39,6 +39,26 @@ public class Alumno {
         this.nota = nota;
     }
     //METODOS
+    public String obtenerCalificacion(){
+        String resultado = "";
+    if (nota <0 || nota > 10) {
+        resultado = "Introduce un valor valido";
+    }
+    else if(nota<=4){
+        resultado = "Suspenso";
+    }
+    else if (nota<=6){
+        resultado = "Bien";
+    }
+    else if (nota <= 8){
+        resultado = "Notable";
+    }
+    else {
+        resultado = "Sobresaliente";
+    }
+    
+    return resultado;
+    }
     
     //TO STRING
     @Override
