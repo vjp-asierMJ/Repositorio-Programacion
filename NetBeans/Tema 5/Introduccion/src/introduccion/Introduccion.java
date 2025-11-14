@@ -70,7 +70,18 @@ public class Introduccion {
     
     public static void empezarAPedalear(Bicicleta bici) {
         bici.setEstaPedaleando(true);
+        
     }
+    //4 /COMPOSICION DE CLASES
+    
+    //4.1 Creo a ciclista
+    Ciclista ciclista = new Ciclista();
+    
+    //4.2 Creo una bici
+    Bicicleta biciPogacar = new Bicicleta(2, "recto", "de carretera", "de disco", true, ciclista);
+    
+    //4.3 Imprimo por pantalla
+    
     
     
 }
