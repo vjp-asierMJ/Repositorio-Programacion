@@ -39,7 +39,7 @@ public class Alumno {
         this.nota = nota;
     }
     //METODOS
-    public String obtenerCalificacion(){
+    public String obtenerCalificacion(){ //Metodo para la calificacion
         String resultado = "";
     if (nota <0 || nota > 10) {
         resultado = "Introduce un valor valido";
@@ -63,7 +63,9 @@ public class Alumno {
     //TO STRING
     @Override
     public String toString(){
-        return "El nombre es"+this.nombre + "La nota es:"+ this.nota;
+        return "El nombre es: "+this.nombre +
+                " La nota es: "+ this.nota+
+                " La calificacion es :" + obtenerCalificacion();
     }
     
 }
