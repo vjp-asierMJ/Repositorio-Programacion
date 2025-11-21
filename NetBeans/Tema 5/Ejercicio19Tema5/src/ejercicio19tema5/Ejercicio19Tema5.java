@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author alumno
  */
-public class Ejercicio19Tema5 {
+public class Ejercicio19Tema5 { //Esta es la clase test, lo unico que la nombro de otra manera
 
     /**
      * @param args the command line arguments
