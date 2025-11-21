@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package introduccion;
+package tema05;
 
 /**
  *
- * @author alumno
+ * @author d3stroya
  */
 public class Ciclista {
-   // ATRIBUTOS
+    // ATRIBUTOS
     private String nombre;
     private int dorsal;
     private String tipo;
@@ -63,5 +59,3 @@ public class Ciclista {
    }
     
 }
-
-

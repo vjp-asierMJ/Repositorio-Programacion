@@ -1,16 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package introduccion;
+package tema05;
 
 /**
  *
- * @author alumno
+ * @author d3stroya
  */
 public class Bicicleta {
-   
-     // 1. ATRIBUTOS
+    // 1. ATRIBUTOS
     // 1.1. MODIFICADORES DE ACCESO
     int ruedas;                 // friendly -> MAL
     protected String manillar;  // MAL
@@ -121,7 +116,7 @@ public class Bicicleta {
         return numBicicletas;
         
         // return this.numBicicletas;   // MAL porque this hace referencia al objeto, 
-                                        // pero numBicicletas pertenece a la clas
+                                        // pero numBicicletas pertenece a la clase
     }
 
 
@@ -153,8 +148,5 @@ public class Bicicleta {
                 // 1.3. Imprimimos la información del ciclista 
                 // (coge el mensaje de ciclista.toString()
                 this.ciclista.toString();
-
     }
 }
-    
-
