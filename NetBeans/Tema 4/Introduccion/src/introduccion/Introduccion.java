@@ -43,6 +43,7 @@ public class Introduccion {
        int num1;
        int num2;
        double resultado;
+       char letra;
        
        //Llamamos a todos los metodos que se ejecuten al lanzar
        
@@ -84,6 +85,18 @@ public class Introduccion {
         //Raiz
         resultado= Calculadora.raizCuadrada(num1);
         System.out.println("La raiz cuadrada es : "+resultado);
+        //Ramdom
+        resultado = Calculadora.aleatorio(num1);
+        System.out.println("Un numero aleatorio del 1 al 10 es : "+resultado);
+        //Menor de los dos
+        resultado = Calculadora.menor(num1, num2);
+        System.out.println("El numero menor es : "+resultado);
+        //Mayor de los dos
+        resultado = Calculadora.mayor(num1, num2);
+        System.out.println("El numero mayor es :"+resultado);
+    
+        letra = Utilidades.letraAleatoria();
+        System.out.println("La letra aleatoria es: "+letra);
     }
     
     
