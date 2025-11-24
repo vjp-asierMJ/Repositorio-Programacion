@@ -14,7 +14,7 @@ public class Empleado {
     private Direccion direccion;
     
     public Empleado(){
-        this.direccion = direccion;
+        this.direccion = new Direccion(); //Para instanciar una variable de un tipo especifico
         this.nombre = "";
         this.salario = 0;
     }
