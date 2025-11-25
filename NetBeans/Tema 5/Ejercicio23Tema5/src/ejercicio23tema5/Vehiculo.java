@@ -45,7 +45,7 @@ public class Vehiculo {
     
     @Override
     public String toString(){
-        return " Vehiculo: "+ this.modelo + " | matricula" + this.matricula + " |Potencia "+this.potenciaCV;
+        return " Vehiculo: "+ this.modelo + "  | matricula" + this.matricula + " | Potencia "+this.potenciaCV;
     }
 }
 
