@@ -8,7 +8,7 @@ package teoria;
  *
  * @author alumno
  */
-public class Flash extends Superheroe {
+public class Flash extends Superheroe implements SuperVelocidad, Defensa {
      // ATRIBUTOS
     private int velocidadMaxima;
 
@@ -47,6 +47,26 @@ public class Flash extends Superheroe {
         System.out.println("              //");
         System.out.println("             //");
         System.out.println("            /");
+    }
+     // Métodos de la interfaz SuperVelocidad implementados
+    @Override
+    public void correrRapido(int velocidad) {
+        if(velocidad < velocidadMaxima) {
+            System.out.println("Flash: Estoy corriendo a " + velocidad + "km/h.");            
+        } else {
+            System.out.println("Flash: No puedo correr tan rápido.");
+            System.out.println("Mi velocidad máxima es " + velocidadMaxima);
+        }
+    }
+    
+    @Override
+    public void atravesarObjetos(String objeto) {
+        System.out.println("Flash: Estoy atravesando " + objeto + "...");
+    }
+
+     @Override
+    public void defenderse() {
+        System.out.println("Flash: ¡Esquivo ataques a la velocidad del rayo!");
     }
 
     // TO STRING

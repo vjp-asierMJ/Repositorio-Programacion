@@ -51,6 +51,49 @@ public class Teoria {
         // 7. Podemos cambiar de cajita a los superhéroes usando casting
 //        flash = (Flash)superheroe;
 //        System.out.println(flash);
+
+        //Metodos de interfaces
+        
+        flash.atravesarObjetos("Edificio");
+        flash.correrRapido(800);
+        
+       //Tambien puedo crear objetos de interfaz con el polimorfismo
+       
+       SuperVelocidad flashVelocidad = new Flash("Flash Velocista",1000);
+       
+       //Pero no puedo instanciar un nuevo objeto ya que no tiene ni seter ni getter
+       
+       //Supervelocidad flashVelocidad = new Supervelocudad() -> Esto esta mal
+       
+       //Podemos tomar una interfaz que se comporte de manera distinata segun el objeto
+       Defensa superheroeDefensivo = flash;
+       superheroeDefensivo.defenderse();
+       
+       superheroeDefensivo = new Hulk("Hulk Defensivo",500);
+       superheroeDefensivo.defenderse();
+       
+       
+       //4. Operador INSTANCEOF: nos dice de que tipo es un objeto
+       System.out.println("\n¿Qué superhéroe tenemos guardado en superheroeDefensivo?");
+
+        if(superheroeDefensivo instanceof Hulk) {
+            System.out.println("Es Hulk");
+        } else if(superheroeDefensivo instanceof Flash) {
+            System.out.println("Es Flash");
+        } else {
+            System.out.println("Es un superhéroe desconocido");
+        }
+        
+        System.out.println("\n¿Qué superpoder tiene el superheroeDefensivo?");
+        if(superheroeDefensivo instanceof SuperVelocidad) {
+            System.out.println("Supervelocidad");
+        } else if(superheroeDefensivo instanceof Defensa) {
+            System.out.println("Defensa");
+        } else {
+            System.out.println("Ningua");
+        }
+    
+    
     }
     
 }
