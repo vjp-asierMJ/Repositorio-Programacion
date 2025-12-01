@@ -26,6 +26,7 @@ public class Ejercicio4Tema6 {
         System.out.println(leon.toString());
         System.out.println(gato.toString());
         
+        System.out.println("=======================");
         System.out.println("POLIMORFISMO"); 
         
         Animal perro2 = new Perro ("Rex",4,18);
