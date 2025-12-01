@@ -36,7 +36,7 @@ public class Lobos extends Perro {
     
      @Override
     public String toString(){
-        return  " =========== LOBO =========" + 
+        return  "LOBO" + 
                 " | Nombre : " + this.getNombre() + 
                 " | Edad : " + this.getEdad() +
                 " | Peso : " +this.getPeso()+

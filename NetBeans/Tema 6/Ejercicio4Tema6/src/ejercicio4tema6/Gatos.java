@@ -35,7 +35,7 @@ public class Gatos extends Felinos {
     
     @Override
     public String toString(){
-        return "========== GATO =========="+
+        return "GATO"+
                 " | Nombre : " + this.getNombre() + 
                 " | Edad : " + this.getEdad() +
                 " | Peso : " +this.getPeso()+

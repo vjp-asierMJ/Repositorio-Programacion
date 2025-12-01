@@ -38,7 +38,7 @@ public class Perro extends Canidos {
     
      @Override
     public String toString(){
-        return  "========== PERRO ==========" +
+        return  "PERRO" +
                 " | Nombre : " + this.getNombre() + 
                 " | Edad : " + this.getEdad() +
                 " | Peso : " +this.getPeso()+
