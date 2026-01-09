@@ -71,7 +71,7 @@ public class ProgramaDeDonacionesAmpliacion {
             
             
         // a. Al menos 8 caracteres
-        while (!valida || contador == 0) {
+        while (valida == true || contador == 0) {
         if (contrasena.length() < 8) {
             System.out.println("❌ Debe tener al menos 8 caracteres.");
             valida = false;
