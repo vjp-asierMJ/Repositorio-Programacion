@@ -24,7 +24,7 @@ public class Ejercicio1Tema7 {
     public static int [] pedirNumero(){ //Metodo para pedir numero
         int numero;
         int i;
-        int [] vector = new int [9]; //Creamos el vector
+        int [] vector = new int [10]; //Creamos el vector
         for(i=0;i<=9;i++){ //Bucle para que pida 10 numeros
             System.out.println("Introduce un numero");
             Scanner entrada = new Scanner(System.in);

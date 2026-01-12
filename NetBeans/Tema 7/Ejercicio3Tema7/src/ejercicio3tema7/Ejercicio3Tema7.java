@@ -18,12 +18,12 @@ public class Ejercicio3Tema7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int tam = tamaño();
+        int tam = pedirTamano();
         int[] numeros = aleatorio(tam);
         mostrarVector(numeros);
     }
 
-    public static int tamaño() { //Metodo para elegir el tamaño del vector
+    public static int pedirTamano() { //Metodo para elegir el tamaño del vector
         int eleccion;
         eleccion = 0;
 
