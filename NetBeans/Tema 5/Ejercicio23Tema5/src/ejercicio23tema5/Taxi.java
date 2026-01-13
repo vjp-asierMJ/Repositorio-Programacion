@@ -17,7 +17,7 @@ public class Taxi extends Vehiculo {
 //        super.setMatricula(matricula); //Si quiero un unico atributo en especigficp
         this.numeroLicencia = 0;
     }
-    public Taxi(String matricula, String modelo, int potenciaCV, int licencia){
+    public Taxi(String matricula, String modelo, int potenciaCV, int numeroLicencia){
         super(matricula,modelo,potenciaCV);
         this.numeroLicencia = numeroLicencia;
     }
