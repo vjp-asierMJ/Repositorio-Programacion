@@ -37,7 +37,7 @@ public class Ejercicio4Tema7 {
 
             for (j = 0; j < array[0].length; j++) { //Bucle para recorrer las columnas de las filas
 
-                array[i][j] = (int) (Math.random() * rango) + inicio; //Crear el numero random entre 100 y 200
+                array[i][j] = (int) (Math.random() * rango +1) + inicio; //Crear el numero random entre 100 y 200
 
                 System.out.println("[" + i + j + "]" + array[i][j]); //Imprimimos el numeros
             }
