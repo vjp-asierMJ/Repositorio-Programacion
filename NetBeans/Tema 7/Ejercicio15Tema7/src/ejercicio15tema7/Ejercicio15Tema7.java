@@ -128,7 +128,7 @@ public class Ejercicio15Tema7 {
 
         System.out.println("Ventas al reves");
 
-        for (i = array.length - 1; i > 0; i--) { //Bucle para mostrarlo al reves
+        for (i = array.length - 1; i >= 0; i--) { //Bucle para mostrarlo al reves
             System.out.println(array[i]);
         }
 
