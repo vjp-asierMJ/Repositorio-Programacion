@@ -117,7 +117,7 @@ public class Ejercicio5Tema7 {
 
             for (j = 0; j < array[0].length; j++) {//Columnas
 
-                suma = array[i][j] + suma; //Actualizamos el valor de lsa suma
+                suma =  suma + array[i][j] ; //Actualizamos el valor de lsa suma
             }
         }
 
