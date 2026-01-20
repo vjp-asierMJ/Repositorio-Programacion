@@ -15,47 +15,76 @@ public class Ejercicio10Tema7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+        int[] array = new int[10]; //Creamos el array
+
+        rellenarArray(array);
+        mostrarArray(array);
+        buscar(array);
+        arraySinRepetidos(array);
     }
-    
-    public static int[] rellenarArray(){
-    
-        int[] array = new int [10];
+
+    public static void rellenarArray(int[] array) { //Rellenamos el array
+
         int i;
         int inicio, fin, rango;
-        
+
         inicio = 1;
         fin = 8;
-        rango = fin-inicio;
-        
-        for(i=0;i<array.length;i++) {
-        
-        array[i] = (int)(Math.random() * rango) + inicio;
-        
+        rango = fin - inicio; //Rango de los numeros aleatorios
+
+        for (i = 0; i < array.length; i++) { //Bucle para rellenar el array
+
+            array[i] = (int) (Math.random() * rango) + inicio; //Lo rellenamos
+
         }
-        return array;
-    
+      
+
     }
-    
-    public static void mostrarArray(int[] array){
-        
+
+    public static void mostrarArray(int[] array) { //Metodo para mostrar el array
+
         int i;
-        
-        for(i=0;i<array.length;i++){
-            System.out.println(i+".- "+array[i]);
+
+        for (i = 0; i < array.length; i++) { //Recorremos las posiciones
+            System.out.println((i+1) + ".- " + array[i]); //Las mostramos
         }
     }
-    public static int[] eliminarRepetidos(int[] array){
-        int i;
+
+    public static void buscar(int[] array) {
+
+        int i = 0;
         int j;
-    
-        boolean repetido = false;
-        
-        for(i=0;i<array.length;i++){
-        
-                       
-        
+
+
+        while (i < array.length) { //Primer bucle para recorrer todas las posciones
+
+            j = i + 1; //Asignamos un puesto por encima a la j
+
+            while (j < array.length) { //Bucle para recorrer la j
+
+                if (array[i] == array[j] && array[i] != 0) {//Si i = j y distinto de 0
+
+                    array[j] = 0; //J pasa a 0
+                }
+
+                j++; //Actualizamos la posicion
+
+            }
+            i++; //Actualizamos la posicion
         }
-    
-    
+
     }
+
+    public static void arraySinRepetidos(int[] array) {
+
+        int i;
+        System.out.println("ARRAY SIN REPETIDOS");
+        for (i = 0; i < array.length; i++) { //Recorremos el array
+
+            System.out.println((i+1) + " .- posicion " + array[i]); //Mostramos las posiciones del array
+        }
+
+    }
+
 }
