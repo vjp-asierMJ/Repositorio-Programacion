@@ -67,7 +67,7 @@ public class Ejercicio14Tema7 {
 
     public static void rellenarArray(int[][] array) { //Metodo para rellenar el array
 
-        int temperaturas;
+        int temperatura;
         int i, j;
 
         Scanner entrada = new Scanner(System.in);
@@ -77,9 +77,9 @@ public class Ejercicio14Tema7 {
             for (j = 0; j < array[0].length; j++) { //Bucle para columnas
 
                 System.out.println("Introduce las temperaturas");
-                temperaturas = entrada.nextInt();
+                temperatura = entrada.nextInt();
 
-                array[i][j] = temperaturas; //Asignamos al array el valor introducido
+                array[i][j] = temperatura; //Asignamos al array el valor introducido
             }
         }
     }
