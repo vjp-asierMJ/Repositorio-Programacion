@@ -72,9 +72,9 @@ public class Ejercicio16Tema7 {
     
         int i, j;
         
-        float Mayormedia = array[0][0];
+        float mayorMedia = array[0][0];
         float media;
-        int alumno;
+        int alumno = 0;
         float suma = 0;
         
         for(i=0;i<array.length;i++) {
@@ -87,9 +87,9 @@ public class Ejercicio16Tema7 {
             
             media = suma/array[0].length;
             
-            if(media>Mayormedia) {
+            if(media>mayorMedia) {
             
-            Mayormedia = media;
+            mayorMedia = media;
             
             alumno = i;
             
