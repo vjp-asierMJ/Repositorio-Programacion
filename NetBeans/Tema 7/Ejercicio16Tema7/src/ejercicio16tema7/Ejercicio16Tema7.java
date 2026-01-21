@@ -178,15 +178,15 @@ public class Ejercicio16Tema7 {
     public static void peorAsignatura(int[][]array, String[]alumnos, String[]asignaturas){
     
      int i,j;
-        int suspenso = 0;
         int maxSuspenso = -1;
         int contador=0;
         int asignatura = 0;
     
-        for(i=0;i<array.length;i++) {
+        for(j=0;j<array[0].length;j++) {
             
+            contador = 0;
         
-            for(j=0;j<array[0].length;j++) {
+            for(i=0;i<array.length;i++) {
             
                 if(array[i][j]<5) {
                     contador++;
@@ -197,7 +197,7 @@ public class Ejercicio16Tema7 {
             
                 maxSuspenso = contador;
                 
-                asignatura = i;
+                asignatura = j;
             }
         }
         
