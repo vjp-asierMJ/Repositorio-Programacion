@@ -65,14 +65,21 @@ public class Empleados {
     
     public static float tarifaPorHoras(int numeroHoras, int tarifa){
     
-        int sueldo, resto;
+        float sueldo=0;
+        int resto;
         
         if(numeroHoras > 0 && numeroHoras <= 40) {
         
             sueldo = numeroHoras*tarifa;
+            
+            numeroHoras = numeroHoras - 40;
         }
         
+        if (numeroHoras!=0) {
         
+            sueldo = (float) (sueldo +(numeroHoras*tarifa*1.5));
+        }
+        return sueldo;
     
     }
     
