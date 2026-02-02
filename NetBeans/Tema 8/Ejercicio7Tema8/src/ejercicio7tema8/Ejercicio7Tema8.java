@@ -4,6 +4,9 @@
  */
 package ejercicio7tema8;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  *
  * @author alumno
@@ -15,15 +18,44 @@ public class Ejercicio7Tema8 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        int eleccion = 0;
         
         Dia[] dias = new Dia[30]; //Creamos el objeto
         String[] semana = {"Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"}; //Array para la semana
         
-        rellenarArray(dias,semana);
-        mostrarArray(dias,semana);
-        mediaMes(dias);
-        diaMasCaluroso(dias,semana);
+          
+        try{ //Excepciones
+            do { //Bucle para menu
+            mostrarMenu();
+           eleccion = eleccion();
+            
+            switch(eleccion){ //Switch case de elecciones
+                case 1:
+                    rellenarArray(dias,semana); //Metodo para rellanar el objeto
+                break;
+                case 2:
+                       mostrarArray(dias,semana); //Metodo para mostrarlo
+                break;
+                case 3:
+                    mediaMes(dias);//Metodo para calcular la media
+                break;
+                case 4: diaMasCaluroso(dias,semana);//Metodo para el dia/s mas caluroso
+                break;
+                
+                case 5:
+                    System.out.println("Saliendo...."); //Salimos
+                break;
+                
+                default:
+                    System.out.println("Introduce una opcion correcta");//Opcion por defecto
+            }
+        }
+        while (eleccion!=5); //Condicion de excepciones
+        
+        }
+        catch(InputMismatchException e){
+            System.out.println("Error, introduce un valor correcto"+e);
+        }
     }
     
     public static void rellenarArray(Dia[] dias, String[] semana){
@@ -95,6 +127,7 @@ public class Ejercicio7Tema8 {
         String dia = "";
         int mayor = 0;
         int posicion = 0;
+        boolean encontrado = false;
         
         int contador = 0; //Creo un contador para no imprimir 2 veces el mismo dia con maxima temperatura
         
@@ -106,26 +139,44 @@ public class Ejercicio7Tema8 {
                 mayor = dias[i].getTemperatura();
                 posicion = i;
                 dia = dias[i].getNombreDia();
+                
+                
           }
         }
         
-        System.out.println("La temperatura maxima es el "+dia+" "+ posicion+ " con una temperatura de "+mayor+" grados");
+        System.out.println("La temperatura maxima es el "+dia+" "+ (posicion+1)+ " con una temperatura de "+mayor+" grados");
         
-        
+
        
-         for(i=0;i<dias.length;i++){
-         
-             if(dias[i].getTemperatura() == mayor ){
-             
-                 contador++;
-             }
-             if(contador != 0) {
-                posicion = i;
-                dia = dias[i].getNombreDia();
-                
-                 System.out.println("La temperatura maxima es el "+dia+ posicion+ " con una temperatura de "+mayor+" grados");
-             }
-        }
+        for (i = 0; i < dias.length; i++) {
+            if (dias[i].getTemperatura() == mayor) {
+                System.out.println("Temperaturas con el maximo: " +
+                           dias[i].getNombreDia() + " " +
+                           (i + 1) + " " + mayor + " grados");
+    }
+}
+    }
+    
+    public static int eleccion(){
+    
+    int eleccion;
+    
+        Scanner entrada = new Scanner(System.in);
+        
+        eleccion = entrada.nextInt();
+        
+        return eleccion;
+    }
+    
+    public static void mostrarMenu(){
+    
+         System.out.println("========== MENU ==========");
+            System.out.println("1. Rellenar temperaturas aleatorias");
+            System.out.println("2. Mostrar temperaturas");
+            System.out.println("3. Visualizar temperatura media del mes");
+            System.out.println("4. Dia(s) mas calurosos del mes");
+            System.out.println("5. Salir");
+            System.out.print("Elige una opcion: ");
     }
     
 }
