@@ -54,7 +54,7 @@ public class Ejercicio7Tema8 {
         
         }
         catch(InputMismatchException e){
-            System.out.println("Error, introduce un valor correcto"+e);
+            System.out.println("Error, introduce un valor correcto "+e);
         }
     }
     
@@ -111,53 +111,50 @@ public class Ejercicio7Tema8 {
         int i;
         int media = 0;
         
-        for(i=0;i<dias.length;i++){
+        for(i=0;i<dias.length;i++){//Recorremos el array
         
-            media = media + dias[i].getTemperatura();
+            media = media + dias[i].getTemperatura();//Sumamos todos los valores
         }
         
-        media = media/dias.length;
+        media = media/dias.length;//Calculamos la media
         
         System.out.println("La media de temperatura es de "+media+ " grados");
     }
     
-    public static void diaMasCaluroso(Dia[] dias, String[] semana){
+    public static void diaMasCaluroso(Dia[] dias, String[] semana){//Metodo para el dia/s mas calurosos
     
         int i=0;
         String dia = "";
         int mayor = 0;
-        int posicion = 0;
-        boolean encontrado = false;
+        int posicion = 0; //Variables
         
-        int contador = 0; //Creo un contador para no imprimir 2 veces el mismo dia con maxima temperatura
-        
-         mayor = dias[0].getTemperatura();
-        for(i=0;i<dias.length;i++){
+         mayor = dias[0].getTemperatura(); //Asignamos el mayor a la primera posicion del objeto
+        for(i=0;i<dias.length;i++){ //Recorremos el array
             
-            if(dias[i].getTemperatura() > mayor) {
+            if(dias[i].getTemperatura() > mayor) {//Si el valor actual es > al mayor lo asignamos
             
                 mayor = dias[i].getTemperatura();
                 posicion = i;
-                dia = dias[i].getNombreDia();
+                dia = dias[i].getNombreDia(); //Guardamos el dia de la semana y el valor de i
                 
                 
           }
         }
         
-        System.out.println("La temperatura maxima es el "+dia+" "+ (posicion+1)+ " con una temperatura de "+mayor+" grados");
+        System.out.println("La temperatura maxima es el "+dia+" "+ (posicion+1)+ " con una temperatura de "+mayor+" grados");//Imprimos
         
 
        
-        for (i = 0; i < dias.length; i++) {
+        for (i = 0; i < dias.length; i++) {//Bucle para sacar mas dias con la misma temperatura
             if (dias[i].getTemperatura() == mayor) {
                 System.out.println("Temperaturas con el maximo: " +
                            dias[i].getNombreDia() + " " +
-                           (i + 1) + " " + mayor + " grados");
+                           (i + 1) + " " + mayor + " grados"); //Si tiene el mismo valor los mostramos
     }
 }
     }
     
-    public static int eleccion(){
+    public static int eleccion(){ //Metodo para tomar la eleccion
     
     int eleccion;
     
@@ -168,7 +165,7 @@ public class Ejercicio7Tema8 {
         return eleccion;
     }
     
-    public static void mostrarMenu(){
+    public static void mostrarMenu(){ //Metodo para mostrar el menu
     
          System.out.println("========== MENU ==========");
             System.out.println("1. Rellenar temperaturas aleatorias");
