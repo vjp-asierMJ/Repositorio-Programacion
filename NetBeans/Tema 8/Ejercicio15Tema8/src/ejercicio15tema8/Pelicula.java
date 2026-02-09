@@ -8,6 +8,7 @@ package ejercicio15tema8;
  *
  * @author alumno
  */
+import java.util.Arrays;
 public class Pelicula {
     
     private String titulo;
@@ -35,6 +36,7 @@ public class Pelicula {
     
         this.titulo = titulo;
         this.costeLicencia = costeLicencia;
+        this.socio = new Socio[4];
     }
      public Pelicula(Socio[] socio){
     
@@ -86,7 +88,8 @@ public class Pelicula {
     
         return " Titulo "+this.titulo+
                 " | Coste Licencia "+this.costeLicencia+
-                " | Socios "+this.socio;
+                " | Socios "+this.socio+
+                Arrays.toString(socio);
     }
 }
 

@@ -10,6 +10,7 @@ package ejercicio15tema8;
  */
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 public class Ejercicio15Tema8 {
 
     /**
@@ -17,146 +18,182 @@ public class Ejercicio15Tema8 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        Pelicula[] pelicula = new Pelicula[4];
-        Socio[] socio = new Socio[4];
-        
+
+        int numero = 0;
+
+        numero = numeroPeliculas();
+
+        Pelicula[] pelicula = new Pelicula[numero];
+//        Socio[] socio = new Socio[4];
+
         int eleccion = 0;
-        
+
         do {
             mostrarMenu();
             eleccion = eleccion();
-            try{
-            
-                switch (eleccion){
-                
+            try {
+
+                switch (eleccion) {
+
                     case 1:
-                        rellenarPeliculas(pelicula,socio);
-                    break;
-                    
+                        rellenarPeliculas(pelicula);
+                        break;
+
                     case 2:
-                         mostrarPeliculas(pelicula);
-                    break;
-                    
+                        mostrarPeliculas(pelicula);
+                        break;
+
                     case 3:
-                        
-                    break;
-                    
+                        peliculaMasRentable(pelicula);
+                        break;
+
                     case 4:
-                        
-                    break;
-                    
+
+                        break;
+
                     case 5:
-                        
-                    break;
-                    
+
+                        break;
+
                     case 6:
-                        
-                    break;
-                    
+
+                        break;
+
                     case 7:
                         System.out.println("Saliendo....");
-                    break;
-                    
+                        break;
+
                     default:
-                        
+
                         System.out.println("Introduce una opcion entre 1 - 7");
                 }
-            }
-            catch(InputMismatchException e){
-            
+            } catch (InputMismatchException e) {
+
                 System.out.println("Valor incorrecto");
             }
-        }
-        while (eleccion != 7);
-        
+        } while (eleccion != 7);
+
     }
-    
-    public static void rellenarPeliculas(Pelicula[] pelicula, Socio[] socio){
-    
+
+    public static int numeroPeliculas() {
+
+        int numero;
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Cuantas peliculas quieres hacer");
+
+        numero = entrada.nextInt();
+
+        return numero;
+    }
+
+    public static void rellenarPeliculas(Pelicula[] pelicula) {
+
         int i;
+        int j;
         String titulo;
         int coste;
         String nombreSocio;
         int precioAbonado;
-        
+
         Scanner entrada = new Scanner(System.in);
-        
-        for (i=0;i<pelicula.length;i++){
-        
+
+        for (i = 0; i < pelicula.length; i++) {
+
             System.out.println("Nombre de la pelicula");
-            
+
             titulo = entrada.nextLine();
-            
+
             System.out.println("Coste de licencia");
-            
+
             coste = entrada.nextInt();
-           
             
-            System.out.println("Nombre socio");
-             entrada.nextLine();
-            
+            entrada.nextLine();
+
+            pelicula[i] = new Pelicula(titulo, coste); //Rellenamos los valores
+
+            for (j = 0; j < pelicula[i].getSocio().length; j++) {
+                System.out.println("Nombre socio");
+
             nombreSocio = entrada.nextLine();
-            
+
             System.out.println("Precio abonado");
             precioAbonado = entrada.nextInt();
             entrada.nextLine();
-            
-            socio[i] = new Socio(nombreSocio,precioAbonado);
-            pelicula [i] = new Pelicula(titulo,coste,socio); //Rellenamos los valores
-            
-           
+
+            pelicula[i].getSocio()[j] = new Socio(nombreSocio, precioAbonado);
+            }
         }
     }
-        
-        public static void mostrarPeliculas(Pelicula[]pelicula){
-        
-            int i;
-            
-            for(i=0;i<pelicula.length;i++){
-            
-                System.out.println(pelicula[i].getSocio());
+
+    public static void mostrarPeliculas(Pelicula[] pelicula) {
+
+        int i;
+
+        for (i = 0; i < pelicula.length; i++) {
+
+            System.out.println(pelicula[i]);
+        }
+    }
+
+    public static void peliculaMasRentable(Pelicula[] pelicula) {
+
+        int i;
+        int suma = 0;
+
+        for (int j = 0; j < pelicula[0].getSocio().length; j++) {
+            suma += pelicula[0].getSocio()[j].getPrecioAbonado();
+        }
+
+        int mayorBeneficio = suma - pelicula[0].getCosteLicencia();
+        String titulo = pelicula[0].getTitulo();
+
+        for (i = 1; i < pelicula.length; i++) {
+
+            suma = 0;
+            for (int j = 0; j < pelicula[i].getSocio().length; j++) {
+                suma += pelicula[i].getSocio()[j].getPrecioAbonado();
+            }
+
+            int beneficio = suma - pelicula[i].getCosteLicencia();
+
+            if (beneficio > mayorBeneficio) {
+                mayorBeneficio = beneficio;
+                titulo = pelicula[i].getTitulo();
             }
         }
-        
-        public static void peliculaMasRentable(Socio[] socio){
-        
-            int i;
-            int menorCosto = socio[0].getPrecioAbonado();
-            
-            for(i=0;i<socio.length;i++){
-            
-                
-            }
-        
-        }
-        
-        
-        public static int eleccion(){
-            
-            int eleccion;
-        
-            Scanner entrada = new Scanner(System.in);
-            
-            System.out.println("");
-            
-            eleccion = entrada.nextInt();
-            
-            return eleccion;
-        }
-        
-        public static  void mostrarMenu(){
-        
-            System.out.println("========= MENU =========");
-            System.out.println("1.- Rellenar Peliculas");
-            System.out.println("2.- Mostrar peliculas");
-            System.out.println("3.- Mostrar pelicula mas rentable");
-            System.out.println("4.- Mostrar peliculas menos rentable");
-            System.out.println("5.- Pedir nombre de peliculas y informacion");
-            System.out.println("6.- Numero de socios con cantidad mayor a la pedida");
-            System.out.println("7.- Salir");
-        
-        }
+
+        System.out.println("La peliculas mas rentable es " + titulo + " con un precio de " + mayorBeneficio + " euros");
+
+    }
     
     
+
+    public static int eleccion() {
+
+        int eleccion;
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("");
+
+        eleccion = entrada.nextInt();
+
+        return eleccion;
+    }
+
+    public static void mostrarMenu() {
+
+        System.out.println("========= MENU =========");
+        System.out.println("1.- Rellenar Peliculas");
+        System.out.println("2.- Mostrar peliculas");
+        System.out.println("3.- Mostrar pelicula mas rentable");
+        System.out.println("4.- Mostrar peliculas menos rentable");
+        System.out.println("5.- Pedir nombre de peliculas y informacion");
+        System.out.println("6.- Numero de socios con cantidad mayor a la pedida");
+        System.out.println("7.- Salir");
+
+    }
+
 }
