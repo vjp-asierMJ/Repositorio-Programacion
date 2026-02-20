@@ -44,32 +44,13 @@ public class Ejercicio9Tema9 {
             password = entrada.nextLine();
             passwordLower = password.toLowerCase(); //Pasamos la contraseña a minusculas
 
-            longitud(errores,password);
-            contarDigitos(password,contador,errores,numeros);
-            compararUsuarioContraseña(passwordLower,usuarioLower,errores);
-            
-            
-
-        } while (errores != 0);//El bucle funciona mientras tenga algun error
-
-        System.out.println("Usuario creado correctamente");
-
-    }
-    
-    public static int longitud(int errores,String password){
-    
-        // Longitud
+            // Longitud
             if (password.length() < 6) { //Si es menor a 6
                 System.out.println("La contraseña debe tener al menos 6 caracteres.");
                 errores++; //Aumentamos el contador de errores
             }
-            return errores;
-    
-    }
-    
-    public static int contarDigitos(String password, int contador,int errores,int[]numeros){
-    
-        // Contar los dijitos
+
+            // Contar los dijitos
             for (int i = 0; i < password.length(); i++) {
 
                 for (int j = 0; j < numeros.length; j++) { //Doble for para contar los dijitos
@@ -84,19 +65,16 @@ public class Ejercicio9Tema9 {
                 System.out.println("La contraseña debe tener al menos 2 dígitos.");
                 errores++;
             }
-            
-            return errores;
-    }
-    
-    
-    public static int compararUsuarioContraseña(String passwordLower,String usuarioLower,int errores){
 
-        // Que no tenga el usuario en la contraseña
+            // Que no tenga el usuario en la contraseña
             if (passwordLower.contains(usuarioLower)) {//Si contiene la contraseña aumentamos los errores
                 System.out.println("La contraseña no puede contener el nombre de usuario.");
                 errores++;
             }
-            
-            return errores;
+
+        } while (errores != 0);//El bucle funciona mientras tenga algun error
+
+        System.out.println("Usuario creado correctamente");
+
     }
 }
