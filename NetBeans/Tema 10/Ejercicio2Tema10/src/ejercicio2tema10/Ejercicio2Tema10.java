@@ -46,7 +46,7 @@ public class Ejercicio2Tema10 {
       
             do {
             System.out.print("Introduce un numero (negativo para salir): ");
-            numero = entrada.nextInt(); //Bucle hasta que ponga un negativo
+                numero = entrada.nextInt(); //Bucle hasta que ponga un negativo
 
             if (numero >= 0) {
                 numeros.add(numero); //Si es positivo lo guardamos
