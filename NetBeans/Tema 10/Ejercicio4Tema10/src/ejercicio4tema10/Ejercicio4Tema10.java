@@ -5,6 +5,7 @@
 package ejercicio4tema10;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -19,13 +20,18 @@ public class Ejercicio4Tema10 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        ArrayList <Integer> lista = new ArrayList<>();
+        ArrayList <Integer> lista = new ArrayList<>(); //Creamos la lista
         
         rellenarLista(lista);
         mostrarLista(lista);
-        listaSinRepetidos(lista);
+        sustituirRepetido(lista);
+        mostrarLista(lista);
     }
     
+    /**
+     * Metodo para rellenar la lista
+     * @param lista 
+     */
     
     public static void rellenarLista(ArrayList <Integer> lista){
     
@@ -46,53 +52,73 @@ public class Ejercicio4Tema10 {
           
         }
         
-        while (num >= 0);
+        while (num >= 0); //mientras que sea mayor a 0
         
         
     }
     
+    /**
+     * Metodo para mostrar la lista
+     * @param lista 
+     */
     public static void mostrarLista(ArrayList <Integer> lista){
     
         int i;
         
         System.out.println("========= LISTA ORIGINAL =========");
         
-        for(i=0;i<lista.size();i++){
+        for(i=0;i<lista.size();i++){ //Bucle
         
-            System.out.println(lista.get(i));
+            System.out.println(lista.get(i));//Lo mostramos
         }
     }
     
-    public static void listaSinRepetidos(ArrayList <Integer> lista){
+    /**
+     * Metodo para comprobar la lista sin números repetidos
+     * @param lista 
+     */
     
+    public static boolean comprobarRepetidos(ArrayList<Integer> lista,int num) {
     
-        int i;
-        int j;
+        boolean repetido = false;
         
-        System.out.println("========== LISTA SIN REPETIDOS ==========");
-        
-        for(i=0;i<lista.size();i++){
-        
+            if(lista.indexOf(num) != lista.lastIndexOf(num)) { //Si los valores son diferentes significa que hay varios repetidos
             
-            for(j=0;j<lista.size();j++){
+                repetido = true;
+            }
             
-                if(i!=j && lista.get(i).equals(lista.get(j))) {
+            return repetido;
+            
+        }
+    
+    /**
+     * Metodo para sustituir los repetidos
+     * @param lista 
+     */
+    
+        public static void sustituirRepetido(ArrayList<Integer> lista){ 
+        
+            int actual;
+            
+            for(int i = 0;i<lista.size();i++){ //Recorremos la lista
                 
-                    lista.set(i, 0);
-                    lista.set(j, 0);
+                actual = lista.get(i); //Guardamos el valor actual en un aux
+                if (comprobarRepetidos(lista,actual) == true) { //Si hay repetidos
+                
+                    for(int j = 0;j<lista.size();j++){ //Otro bucle para comparar el valor actual con cada uno de los otros
+                    
+                        if(lista.get(j) == actual) { //Si son iguales
+                        
+                            lista.set(j, 0); //Lo sustituimos por 0
+                        }
+                    }
                 }
-                
             }
         }
-        
-        for(i=0;i<lista.size();i++){
-        
-            System.out.println(lista.get(i));
-        }
     }
     
     
     
     
     
-}
+
