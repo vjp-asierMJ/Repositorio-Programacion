@@ -20,6 +20,12 @@ public class Ejercicio5Tema10 {
         // TODO code application logic here
 
         ArrayList<Integer> numeros = new ArrayList<>();
+        
+        rellenarLista(numeros);
+        mostrarLista(numeros);
+        
+        mayorPar(numeros);
+        menorImpar(numeros);
 
     }
 
@@ -53,11 +59,8 @@ public class Ejercicio5Tema10 {
         }
     }
     
-    public static void buscarPar(ArrayList<Integer> numeros){
+   
     
-        int mayor = 0;
-        
-    }
     
     public static void mayorPar(ArrayList<Integer> numeros){
     
@@ -90,7 +93,39 @@ public class Ejercicio5Tema10 {
     
     public static void menorImpar(ArrayList<Integer> numeros){
     
+        int i=0;
         
+        int menor = 0;
+        
+        boolean encontrado = false;
+        
+        
+        while(encontrado != true) { //Encontrar par
+        
+            if(numeros.get(i)%2 == 0) {
+            
+                encontrado = true;
+                menor = numeros.get(i);
+            }
+            i++;
+        }
+        
+        if(encontrado == false){
+        
+            System.out.println("No hay ningun numero impar");
+        }
+        
+        if(encontrado == true){
+        
+            for(int j =0;j<numeros.size();j++){ //Asignar el mayor par
+        
+            if(numeros.get(i)> menor && numeros.get(i)%2==0) {
+            
+                menor = numeros.get(i);
+            }
+            
+        }
+        }
     }
     
     
