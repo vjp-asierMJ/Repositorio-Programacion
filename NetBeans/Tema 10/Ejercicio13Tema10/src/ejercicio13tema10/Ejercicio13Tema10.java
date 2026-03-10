@@ -149,7 +149,7 @@ do { // Menú
 
             for (int i = 0; i < MESES; i++) { //Recorremos la lista
 
-                if (ventas.get(i).getNombreMes().contains("a") || ventas.get(i).getNombreMes().contains("A")) { //Si contiene a || A
+                if (ventas.get(i).getNombreMes().startsWith("a") || ventas.get(i).getNombreMes().startsWith("A")) { //Si contiene a || A
 
                     total += ventas.get(i).getVentasCoches(); //Lo sumamos
 
