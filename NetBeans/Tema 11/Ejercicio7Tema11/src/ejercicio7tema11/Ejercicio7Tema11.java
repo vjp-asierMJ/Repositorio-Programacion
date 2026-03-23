@@ -4,7 +4,10 @@
  */
 package ejercicio7tema11;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 /**
@@ -19,10 +22,15 @@ public class Ejercicio7Tema11 {
     public static void main(String[] args) {
         // TODO code application logic here+
         
-        int eleccion;
+        int eleccion = 0;
         
         Campania campania = new Campania();
         
+        Donacion donacion = new Donacion();
+        
+        LinkedHashSet<Donacion> donaciones = new LinkedHashSet<>(); //Conjunto
+        
+        ArrayList<Campania> campanias = new ArrayList<>();
         
          do { //Bucle
             try {//Excepciones
@@ -31,7 +39,7 @@ public class Ejercicio7Tema11 {
 
                 switch (eleccion) {
 
-                    case 1 ->
+                    case 1 -> añadirCampaña(campania);
                         
                     case 2 ->
                         
@@ -58,8 +66,51 @@ public class Ejercicio7Tema11 {
         
     }
     
+    //Metodo para añadir una campaña
+    
     public static void añadirCampaña(Campania campania){
     
+        String nombre;
+        
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.println("Nombre Campaña :");
+        
+        nombre = entrada.nextLine();
+        
+        campania = new Campania(nombre);
+        
+    }
+    
+    //Metodo para añadir una donacion a una campaña
+    public static void añadirDonacion(Campania campania,LinkedHashSet<Donacion> donaciones,ArrayList<Campania> campanias){
+    
+    Campania campaniaSeleccionada = null;
+    Scanner entrada = new Scanner(System.in);
+
+    // Mientras no encontremos la campaña
+    while (campaniaSeleccionada == null) {
+        
+        
+        System.out.println("Nombre de la Campaña:");
+        String campaniaBuscada = entrada.nextLine();
+
+        // Iterador para recorrer la lista
+        Iterator<Campania> it = campanias.iterator();
+        boolean encontrado = false;
+
+        while (it.hasNext() && !encontrado) {
+            Campania c = it.next();
+            if (c.getNombreCampania().equalsIgnoreCase(campaniaBuscada)) {
+                campaniaSeleccionada = c;
+                encontrado = true; // Señalamos que encontramos la campaña
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Campaña no encontrada. Intente nuevamente.");
+        }
+    }
     
     }
     
