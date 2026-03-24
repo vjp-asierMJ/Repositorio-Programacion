@@ -4,6 +4,7 @@
  */
 package ejercicio6tema11;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.LinkedHashSet;
@@ -159,40 +160,19 @@ public class Ejercicio6Tema11 {
     }
 
     //Metodo para ordenar las donaciones de mayor a menor
-    public static void ordenarDonaciones(LinkedHashSet<Donacion> donaciones) {
+public static void ordenarDonaciones(LinkedHashSet<Donacion> donaciones) {
+    // Convertimos LinkedHashSet a List para poder ordenar
+    ArrayList<Donacion> listaOrdenada = new ArrayList<>(donaciones);
 
-        // Convertimos LinkedHashSet a array
-        Donacion[] aux = new Donacion[donaciones.size()];
-        int index = 0;
-        for (Donacion d : donaciones) {
-            aux[index++] = d;
-        }
+    // Ordenamos usando compareTo de Donacion
+    listaOrdenada.sort((donacion1, donacion2) -> Integer.compare(donacion2.getCantidad(), donacion1.getCantidad())); // orden de mayor a menor
 
-        // Array donde vamos a insertar en orden descendente
-        Donacion[] ordenado = new Donacion[aux.length];
-        int tam = 0; // cantidad de elementos insertados
-
-        for (Donacion d : aux) { // recorremos cada donación
-            int pos = 0;
-            // buscamos la posición correcta
-            while (pos < tam && d.getCantidad() < ordenado[pos].getCantidad()) {
-                pos++;
-            }
-            // desplazamos elementos a la derecha
-            for (int j = tam; j > pos; j--) {
-                ordenado[j] = ordenado[j - 1];
-            }
-            // insertamos la donación
-            ordenado[pos] = d;
-            tam++;
-        }
-
-        // Mostramos resultado
-        System.out.println("Donaciones ordenadas de mayor a menor:");
-        for (Donacion d : ordenado) {
-            System.out.println(d);
-        }
+    // Mostramos resultado
+    System.out.println("Donaciones ordenadas de mayor a menor:");
+    for (Donacion d : listaOrdenada) {
+        System.out.println(d);
     }
+}
 
     //Método para mostrar el menú
     public static void menu() {
