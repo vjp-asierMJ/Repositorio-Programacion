@@ -9,7 +9,8 @@ package ejercicio7tema11;
  * @author alumno
  */
 public class Donacion {
-      private String nombre;
+      
+    private String nombre;
     private int cantidad;
     
     

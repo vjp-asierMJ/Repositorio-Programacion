@@ -28,6 +28,7 @@ public class Campania {
     
     public Campania(String nombreCampania) {
         this.nombreCampania = nombreCampania;
+        this.donaciones = new LinkedHashSet<>();
     }
     
     //Getters y Setters 
