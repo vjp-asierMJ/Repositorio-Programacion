@@ -21,6 +21,10 @@ public class Ciudad {
         this.sedes = sedes;
     }
     
+     public Ciudad(LinkedHashSet<Sede>sedes) {
+        this.sedes = sedes;
+    }
+    
     public Ciudad(){
     
         this.nombre= "";
