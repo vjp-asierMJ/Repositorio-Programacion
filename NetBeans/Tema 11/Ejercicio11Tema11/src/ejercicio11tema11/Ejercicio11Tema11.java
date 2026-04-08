@@ -32,7 +32,8 @@ public class Ejercicio11Tema11 {
                 switch (eleccion){
                     case 1-> insertarAlumno(alumnos);
                     case 2->mostrarAlumnos(alumnos);
-                    
+                    case 3 -> buscarExpediente(alumnos);
+                    case 4 -> mostrarPorNota(alumnos);
                     case 5 -> {
                         System.out.println("Saliendo...");
                     }
@@ -64,14 +65,74 @@ public class Ejercicio11Tema11 {
     
     public static void mostrarAlumnos(HashSet <Alumno> alumnos){
     
-        ArrayList<Integer> alumnosOrdenados = new ArrayList<>();
+        ArrayList<Alumno> alumnosOrdenados = new ArrayList<>();
         
         for(Alumno a : alumnos){ //recorremos todos los valores
         
-            alumnosOrdenados.add(a.getNumeroExpediente());
+            alumnosOrdenados.add(a);
         }
         
-        alumnosOrdenados.sort((s1,s2) -> Integer.compare(s2, s1)); //Vamos comparando cada valor
+        alumnosOrdenados.sort((s1,s2) -> Integer.compare(s1.getNumeroExpediente(), s2.getNumeroExpediente())); //Vamos comparando cada valor
+    
+        System.out.println(alumnosOrdenados);
+    }
+    
+    
+    
+    //Método para buscar un alumno por numero de expediente
+    
+    public static void buscarExpediente(HashSet<Alumno> alumnos){
+    
+        int expediente = pedirInt("Expediente Buscado: ");
+        
+        int i = 0;
+        
+        ArrayList<Alumno> lista = new ArrayList<>(alumnos); //creamos una lista y le pasamos el conjunto
+        
+        boolean encontrado = false;
+        
+        while(!encontrado && i<alumnos.size()){
+        
+            if(lista.get(i).getNumeroExpediente() == expediente){
+            
+                System.out.println("DNI: "+lista.get(i).getDni()+" Expediente: "+lista.get(i).getNumeroExpediente()+" Nota Media: "+lista.get(i).getNotaMedia());
+                
+                encontrado = true; //pasamos a verdadero
+            }
+            
+            i++;
+         
+         
+        }
+        
+        if(encontrado == false){ //si no lo encuntra
+        
+            System.out.println("El expediente "+expediente+" no existe");
+        }
+    }
+    
+    //Método para mostrar los alumnos por nota
+    
+    public static void mostrarPorNota(HashSet<Alumno> alumnos){
+    
+        int nota = pedirInt("Nota: ");
+        
+        boolean encontrado = false;
+        
+        for(Alumno a : alumnos){ //recorremos el conjunto
+        
+            if(a.getNotaMedia() == nota) { //si encontramos la nota
+            
+                System.out.println("DNI: "+a.getDni()+" Expediente: "+a.getNumeroExpediente()+" Nota Media: "+a.getNotaMedia());
+                
+                encontrado = true;
+            }
+        }
+        
+        if(encontrado == false){
+        
+            System.out.println("No hay alumnos con "+nota+" nota media");
+        }
     }
     
     //Método para mostrar el menu
