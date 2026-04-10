@@ -72,7 +72,7 @@ public class Ejercicio11Tema11 {
             alumnosOrdenados.add(a);
         }
 
-        alumnosOrdenados.sort((s1, s2) -> Integer.compare(s1.getNumeroExpediente(), s2.getNumeroExpediente())); //Vamos comparando cada valor
+        alumnosOrdenados.sort((s1, s2) -> Float.compare(s1.getNumeroExpediente(), s2.getNumeroExpediente())); //Vamos comparando cada valor
 
         System.out.println(alumnosOrdenados);
     }
