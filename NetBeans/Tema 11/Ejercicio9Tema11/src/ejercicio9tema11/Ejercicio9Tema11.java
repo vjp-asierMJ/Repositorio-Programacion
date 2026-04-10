@@ -109,10 +109,10 @@ public class Ejercicio9Tema11 {
         if (sorteos.isEmpty()) {
             System.out.println("No hay ningun sorteo");
         } else {
-            for (Sorteo s : sorteos.values()) {//recorremos los sorteos
+            for (LocalDate clave : sorteos.keySet()) {//recorremos los sorteos
 
-                if (s.getFechaSorteo().getMonthValue() == mesActual) { //si el mes del sorteo es igual al mes actual
-                    System.out.println(s);//mostramos
+                if (sorteos.get(clave).getFechaSorteo().getMonthValue() == mesActual) { //si el mes del sorteo es igual al mes actual
+                    System.out.println(sorteos.get(clave));//mostramos
                 }
             }
         }
@@ -170,9 +170,9 @@ public class Ejercicio9Tema11 {
         if (sorteos.isEmpty()) {
             System.out.println("No hay sorteos");
         } else {
-            for (Sorteo s : sorteos.values()) {
+            for (LocalDate clave : sorteos.keySet()) {
 
-                System.out.println(s);
+                System.out.println(sorteos.get(clave));
             }
         }
     }
