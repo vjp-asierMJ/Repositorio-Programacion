@@ -24,8 +24,8 @@ public class Ejercicio1Tema12 {
 
         int eleccion = 0;
 
-        do {
-            try {
+        do { //bucle
+            try { //excepciones
                 menu();
                 eleccion = pedirInt("");
                 switch (eleccion) {
