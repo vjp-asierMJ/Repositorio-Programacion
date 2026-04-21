@@ -1,0 +1,6 @@
+Nombre y Apellido del becario: b3
+Sexo: H
+Edad: 26
+Numero de suspensos: 1
+Residiencia Familiar: SI
+Ingresos Anuales: 18000
