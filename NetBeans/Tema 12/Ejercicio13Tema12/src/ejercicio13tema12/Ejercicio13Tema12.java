@@ -72,7 +72,6 @@ public class Ejercicio13Tema12 {
                 
             ) 
         {
-            pw.println("");//linea de separacion
             pw.println("Nombre y Apellido del becario: " + pedirString("Nombre y Apellido del becario")); //escribimos
             pw.println("Sexo: " + pedirString("Sexo (H-M)"));
             pw.println("Edad: " + pedirInt("Edad (20-60)"));
