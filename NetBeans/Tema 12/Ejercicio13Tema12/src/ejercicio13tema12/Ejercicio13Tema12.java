@@ -24,7 +24,7 @@ public class Ejercicio13Tema12 {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        try {
+        try {//excepciones
             leerFichero();
         } catch (FileNotFoundException e) {
             System.out.println("Error: Error, fichero no encontrado");
@@ -42,35 +42,38 @@ public class Ejercicio13Tema12 {
 
         String linea;
 
-        try (
+        try ( //readers
                 FileReader fr = new FileReader(FICHERO); 
                 BufferedReader br = new BufferedReader(fr);
                 
             ) 
         {
 
-            linea = br.readLine();
+            linea = br.readLine();//leemos la linea
 
-            while (linea != null) {
+            while (linea != null) { //vamos leyendo cada linea
                 linea = br.readLine();
 
             }
 
-            if (linea == null) {
+            if (linea == null) { //si la linea esta vacia llamamos a el metodo escribir fichero
                 escribirFichero();
             }
         }
     }
 
+    //metodo para escribir un fichero
     public static void escribirFichero() throws IOException, FileNotFoundException {
 
         try (
-                FileWriter fw = new FileWriter(FICHERO);
+                FileWriter fw = new FileWriter(FICHERO,true); //ponemos true para que no sobre escriba 
+                                                              //lo que tenemos sino que lo escriba debajo
                 PrintWriter pw = new PrintWriter(fw);
                 
             ) 
         {
-            pw.println("Nombre y Apellido del becario: " + pedirString("Nombre y Apellido del becario"));
+            pw.println("");//linea de separacion
+            pw.println("Nombre y Apellido del becario: " + pedirString("Nombre y Apellido del becario")); //escribimos
             pw.println("Sexo: " + pedirString("Sexo (H-M)"));
             pw.println("Edad: " + pedirInt("Edad (20-60)"));
             pw.println("Numero de suspensos: " + pedirInt("Numero de suspensos 0-4"));

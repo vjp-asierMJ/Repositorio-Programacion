@@ -4,3 +4,9 @@ Edad: 26
 Numero de suspensos: 1
 Residiencia Familiar: SI
 Ingresos Anuales: 18000
+Nombre y Apellido del becario: b1
+Sexo: h
+Edad: 32
+Numero de suspensos: 1
+Residiencia Familiar: SI
+Ingresos Anuales: 2000
