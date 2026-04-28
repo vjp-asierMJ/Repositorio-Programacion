@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 public class Ejercicio21Tema12 {
 
-    public final static String FICHERO = "notas.txt";
+    public final static String FICHERO = "notas.obj";
 
     public static void main(String[] args) {
         // TODO code application logic here
