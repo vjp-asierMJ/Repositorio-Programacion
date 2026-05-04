@@ -112,13 +112,13 @@ public class Ejercicio26Tema12 {
 
         do {
 
-            for (Bebida be : productos) {
+            for (Bebida be : productos) { //mostramos los productos que tenemos en el momento
 
                 System.out.println(be);
             }
 
-            nombreProducto = pedirString("Nombre del producto: ");
-            cantidadProducto = pedirInt("Cantidad deseada: ");
+            nombreProducto = pedirString("Nombre del producto: "); //pedimos el nombre del producto
+            cantidadProducto = pedirInt("Cantidad deseada: "); //pedimos la cantidad deseada
 
             while (it.hasNext()) {
 
