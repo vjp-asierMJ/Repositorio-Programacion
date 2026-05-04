@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class Ejercicio26Tema12 {
 
-    public final static String FICHERO = "tienda.obj";
+    public final static String FICHERO = "tienda.obj";//nombre del fichero
 
     public static void main(String[] args) {
         // TODO code application logic here
