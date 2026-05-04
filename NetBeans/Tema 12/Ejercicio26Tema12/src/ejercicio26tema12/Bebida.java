@@ -4,11 +4,13 @@
  */
 package ejercicio26tema12;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alumno
  */
-public class Bebida {
+public class Bebida implements Serializable{
 
     //atributos
     private String nombre;

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -86,43 +87,92 @@ public class Ejercicio26Tema12 {
 
         try (
                 FileOutputStream fos = new FileOutputStream(FICHERO); //writers
-                ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 
             oos.writeObject(productos); //escribo la lista
 
             System.out.println("Productos añadidos a la tienda");
         }
     }
-    
+
     //metodo para comprar productos
-    public static void comprarProductos(ArrayList<Bebida> productos) throws FileNotFoundException, ClassNotFoundException,IOException {
-    
-        ArrayList<Bebida> productosActualizados = new ArrayList<>(productos);
-    
-        String nombreProducto;
-        
+    public static void comprarProductos(ArrayList<Bebida> productos) throws FileNotFoundException, ClassNotFoundException, IOException {
+
+        ArrayList<Bebida> productosComprados = new ArrayList<>(); //lista para los productos comprados
+
+        Iterator<Bebida> it = productos.iterator(); //iterador para borrar productos y el while
+
+        String nombreProducto; //atributos
+
         int cantidadProducto;
-        
-        do{
-        
-            for(Bebida be : productos) {
-            
+
+        boolean productoEcontrado = false;
+
+        int total = 0;
+
+        do {
+
+            for (Bebida be : productos) {
+
                 System.out.println(be);
             }
-            
+
             nombreProducto = pedirString("Nombre del producto: ");
             cantidadProducto = pedirInt("Cantidad deseada: ");
-            
-            for(Bebida b : productos) {
-            
-                if(b.getNombre().equalsIgnoreCase(nombreProducto) && b.getStock()>= cantidadProducto){
-                
-                    
+
+            while (it.hasNext()) {
+
+                Bebida b = it.next();
+
+                if (b.getNombre().equalsIgnoreCase(nombreProducto) && b.getStock() > 0) {//si el nombre coincide y hay stock
+
+                    productoEcontrado = true; //encontrado pasa a true
+
+                    if (b.getStock() >= cantidadProducto) { //si el stock es mayor al solicitado
+
+                        // actualizar stock
+                        b.setStock(b.getStock() - cantidadProducto);
+
+                        // calcular total
+                        total += b.getPrecio() * cantidadProducto;
+
+                        // añadir a comprados
+                        productosComprados.add(b);
+
+                        // si se queda sin stock lo borramos
+                        if (b.getStock() == 0) {
+                            it.remove();
+                        }
+
+                    } else { // si no encuentra el producto
+                        System.out.println("No hay suficiente stock");
+                    }
+
                 }
             }
+
+            if (productoEcontrado == false) {//si no encontramos el nombre
+
+                System.out.println("No hemos encontrado el producto " + nombreProducto);
+            }
+
+        } while (pedirString("¿Desea continuar? s/n").equalsIgnoreCase("s")); //condicion
+
+        System.out.println("========== LISTA =========="); //mostramos la lista de la compra
+        for(Bebida bebidas : productosComprados){ //recorremos el carrito
+            System.out.println(bebidas); //mostramos el carrito
         }
-        while(pedirString("¿Desea continuar? s/n").equalsIgnoreCase("s"));
-    
+        System.out.println("El total es: " + total);
+
+        //actualizamos los datos del fichero 
+        try (
+                FileOutputStream fos = new FileOutputStream(FICHERO); //writers
+                 ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+
+            oos.writeObject(productos); //escribo la lista
+
+            System.out.println("Productos añadidos a la tienda");
+        }
     }
 
     //metodo para mostrar el menu
